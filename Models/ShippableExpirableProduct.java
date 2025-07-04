@@ -7,6 +7,9 @@ public class ShippableExpirableProduct extends ExpirableProduct implements Shipp
     private double weight;
     public ShippableExpirableProduct(String name, double price, int quantity, LocalDate expiryDate, double weight) {
         super(name, price, quantity, expiryDate);
+        if(weight < 0) {
+            throw new IllegalArgumentException("Weight cannot be negative");
+        }
         this.weight = weight;
     }
 

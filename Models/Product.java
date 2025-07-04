@@ -12,6 +12,9 @@ public class Product {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity cannot be negative");
         }
+        if(name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
         this.name = name;
         this.price = price;
         this.quantity = quantity;

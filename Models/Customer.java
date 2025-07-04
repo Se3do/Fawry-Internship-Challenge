@@ -6,6 +6,15 @@ public class Customer {
     private double balance;
     
     public Customer(String name, String email, double balance) {
+         if (balance <= 0) {
+            throw new IllegalArgumentException("Balance must be positive");
+        }
+        if(name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+        if(email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be null or empty");
+        }
         this.name = name;
         this.email = email;
         this.balance = balance;
